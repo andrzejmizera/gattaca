@@ -25,12 +25,7 @@ The implementation of this project is based on [gym-PBN](https://github.com/UoS-
     ```
 
 # Models
-All trained models are available via google drive:
-https://drive.google.com/drive/folders/1qLV0IdBfFg-MFj28WtYGdy6pYK63YfUs?usp=sharing
-
-or
-
-https://drive.google.com/drive/folders/1Ov9pIZVqdngyTVTRLq1tbxNXqHMN7ZOr?usp=sharing
+All trained models are available via google drive: https://drive.google.com/drive/folders/1qLV0IdBfFg-MFj28WtYGdy6pYK63YfUs?usp=sharing or https://drive.google.com/drive/folders/1Ov9pIZVqdngyTVTRLq1tbxNXqHMN7ZOr?usp=sharing
 
 # Running
 - Use `train_gattaca.py` to train a DDQN agent. It's a command line utility so you can check out what you can do with it using `--help`.
