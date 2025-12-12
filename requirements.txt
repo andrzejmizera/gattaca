@@ -1,10 +1,10 @@
 setuptools==65.5.0
 pip==21
 wheel==0.38.0
+numpy==1.23.5
 scikit-learn
 torch_geometric
 colomoto_jupyter
-numpy==1.23.5
 seaborn
 # SB3
 stable-baselines3[extras]
