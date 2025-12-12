@@ -5,16 +5,19 @@ The implementation of this project is based on [gym-PBN](https://github.com/UoS-
 
 # Environment Requirements
 - CUDA 11.3+
-- Python 3.9+
+- Setuptools 65.5.0 (requires Python 3.9+)
 
 # Installation
 ## Local
-- Create a python environment using PIP:
+- Create a Python virtual environment using PIP:
     ```sh
     python3 -m venv .env
     source .env/bin/activate
     ```
     For the last line, use `.\env\Scripts\activate` if on Windows.
+    
+    Please make sure to use Python 3.9.+
+    
 - Install [PyTorch](https://pytorch.org/get-started/locally/):
     ```sh
     python -m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
@@ -22,6 +25,10 @@ The implementation of this project is based on [gym-PBN](https://github.com/UoS-
 - Install the package and its dependencies dependencies:
     ```sh
     python -m pip install -r requirements.txt
+    ```
+- Install the gym-PBN envornments for the GATTACA framework:
+    ```sh
+    pip install -e gym-PBN-gattaca
     ```
 
 # Models
