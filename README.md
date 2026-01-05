@@ -42,7 +42,7 @@ This project extends our previous work [pbn-STAC](https://arxiv.org/abs/2402.084
 - Use `model_tester.py` to get strategies and statistics about the model.
 E.g.:
 ```sh
-python model_tester.py -n 67 --assa-file  bortezomib_fixed.ispl --model-path models/pbn67/bdq_final.pt --attractors 10 --runs 10
+python model_tester.py -n 67 --assa-file  bortezomib_fixed.ispl --model-path models/pbn67/bdq_final.pt --attractors 10 --runs 10 --name bortezomib
 ```
 
 | Argument       | Description                                                          |
