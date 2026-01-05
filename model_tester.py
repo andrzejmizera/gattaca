@@ -20,7 +20,7 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 import pickle as pkl
 
-from gym_PBN.utils.get_attractors_from_cabean import get_attractors
+# from gym_PBN.utils.get_attractors_from_cabean import get_attractors
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', type=int, required=True)
@@ -29,6 +29,7 @@ parser.add_argument('--attractors', type=int, default=3)
 parser.add_argument('--runs', type=int, default=1)
 parser.add_argument('--assa-file', type=str, default=None)
 parser.add_argument('--matlab-file', type=str, default=None)
+parser.add_argument('--name', type=str, required=True)
 
 
 args = parser.parse_args()
@@ -111,7 +112,8 @@ if args.assa_file is not None and args.matlab_file is None:
                    N=args.n,
                    genes=list(logic_funcs.keys()),
                    logic_functions=list(logic_funcs.values()),
-                   min_attractors=args.attractors)
+                   min_attractors=args.attractors,
+                   model_name=args.name)
 
 
 print(type(env.env.env))
@@ -160,13 +162,14 @@ for i in range(runs):
     print("testing round ", i)
     id = -1
 
-    for attractor_id in range(args.attractors):
+    for attractor_id in range(len(env.divided_attractors)):
         gens_used_tmp = defaultdict(int)
         gu = []
 
         # print(f"processing initial_state, target_state = {attractor_id}, {target_id}")
         model.EPSILON = 0.
         id += 1
+        print(attractor_id)
         attractor = all_attractors[attractor_id]
         # target = all_attractors[target_id]
         # target_state = target[0]

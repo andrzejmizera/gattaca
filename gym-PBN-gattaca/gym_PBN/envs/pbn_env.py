@@ -118,8 +118,8 @@ class PBNEnv(PBNTargetMultiEnv):
 
         out_node_names = []
         # bortezomib
-        self.out_node_values = [0, 1, 1]
-        out_node_names = ["JNK", "p21", "Cas3"]
+        # self.out_node_values = [0, 1, 1]
+        # out_node_names = ["JNK", "p21", "Cas3"]
 
         # aba
         # out_node_names = ['v_Closure']
@@ -149,8 +149,8 @@ class PBNEnv(PBNTargetMultiEnv):
         # self.out_node_values = [1]
 
         #random 200
-        # out_node_names = ["x3"]
-        # self.out_node_values = [1]
+        out_node_names = ["x3"]
+        self.out_node_values = [1]
 
         #bladder
         # out_node_names = ["v_Apoptosis_b1"]
