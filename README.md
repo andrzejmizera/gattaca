@@ -1,3 +1,7 @@
+**This research was funded in whole or in part by the National Science Centre, Poland under the OPUS call in the Weave programme, grant number 2023/51/I/ST6/02864.**
+
+---
+
 # The Graph-based ATtractor-TArget Control Algorithm (GATTACA) Framework
 
 Source code of the GATTACA framework introduced in [A. Mizera, J. Zarzycki. Graph Neural Network-Based Reinforcement Learning for Controlling Biological Networks - the GATTACA Framework (2025)](https://arxiv.org/abs/2505.02712).
