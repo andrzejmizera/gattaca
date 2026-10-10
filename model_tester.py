@@ -121,7 +121,7 @@ env.reset()
 
 config = AgentConfig()
 model = model_cls(N, N + 1, config, env)
-model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu'), weights_only=False))
 model.EPSILON = 0
 
 state, _ = env.reset()
