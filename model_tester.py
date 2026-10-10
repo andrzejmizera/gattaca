@@ -217,7 +217,7 @@ for i in range(runs):
                   f"{[[env.graph.nodes[a].name for a in action] for action in gu]}")
 
 
-print('got total steps ', total, 'in ', args.attractors * args.runs, 'runs')
-print('average ', total / (args.attractors * args.runs))
+print('got total steps ', total, 'in ', len(env.divided_attractors) * args.runs, 'runs')
+print('average ', total / (len(env.divided_attractors) * args.runs))
 gene_stats = gene_stats[1:]
 print("gene used: ", {env.graph.nodes[i].name: genes_used[i] for i in genes_used if i not in env.forbidden_actions})

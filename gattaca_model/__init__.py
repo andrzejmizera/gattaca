@@ -69,10 +69,13 @@ class GATTACA(nn.Module):
                 ret += 1
         return ret
 
-    def predict(self, state, state2):
+    def predict(self, state, state2, test=False):
         with torch.no_grad():
             # exploration probability
-            epsilon = self.decrement_epsilon()
+            if not test:
+                epsilon = self.decrement_epsilon()
+            else:
+                epsilon = 0
 
             if np.random.random() < epsilon:
                 diff_list = []
@@ -234,7 +237,7 @@ class GATTACA(nn.Module):
 
             if done:
                 # we need to propagate reward along whole path
-                ep_reward = reward
+                ep_reward += (self.gamma ** (ep_len - 1)) * reward
 
                 # noinspection PyTypeChecker
                 env.rework_probas(ep_len)

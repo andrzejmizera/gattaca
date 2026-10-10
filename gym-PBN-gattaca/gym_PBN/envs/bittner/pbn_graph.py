@@ -63,7 +63,8 @@ class PBNGraph(Graph):
             for bot_node_id in top_node.predictors[0]:
                 if bot_node_id not in done:
                     done.add(bot_node_id)
-                    top_nodes.append(top_node.index)
-                    bot_nodes.append(bot_node_id)
+                    if top_node.index != bot_node_id:
+                        top_nodes.append(top_node.index)
+                        bot_nodes.append(bot_node_id)
 
         return [top_nodes, bot_nodes]

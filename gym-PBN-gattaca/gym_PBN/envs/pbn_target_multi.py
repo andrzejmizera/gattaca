@@ -121,12 +121,12 @@ class PBNTargetMultiEnv(gym.Env):
         for action in actions:
             # if action -1 in self.forbidden_actions:
             #     raise ValueError
-            if action - 1 not in self.forbidden_actions:  # Action 0 is taking no action.
+            if (action != 0) and (action - 1 not in self.forbidden_actions):  # Action 0 is taking no action.
                 self.graph.flipNode(action - 1)
 
-        observation = self.graph.getState()
         self.graph.step()
-
+        observation = self.graph.getState()
+        
         step_count = 0
         returns_count = 0
         history = defaultdict(int)
