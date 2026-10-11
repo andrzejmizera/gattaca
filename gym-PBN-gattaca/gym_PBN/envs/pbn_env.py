@@ -313,16 +313,16 @@ class PBNEnv(PBNTargetMultiEnv):
         # print(self.out_node_values)
 
         # For all except bladder2
-        for i in range(len(self.out_node_values)):
-           if observation[self.out_nodes[i]] != self.out_node_values[i]:
-               return False
-        return True
+        # for i in range(len(self.out_node_values)):
+        #    if observation[self.out_nodes[i]] != self.out_node_values[i]:
+        #        return False
+        # return True
 
         # For bladder2:
-        # if observation[self.out_nodes[0]] + observation[self.out_nodes[1]] == 0:
-        #     return False
-        # else:
-        #     return True
+        if observation[self.out_nodes[0]] + observation[self.out_nodes[1]] == 0:
+            return False
+        else:
+            return True
 
 
     def is_singleton(self, state):
