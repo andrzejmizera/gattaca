@@ -319,6 +319,7 @@ class PBNEnv(PBNTargetMultiEnv):
         # return True
 
         # For bladder2:
+        print(f"Out nodes: {self.out_nodes}")
         if observation[self.out_nodes[0]] + observation[self.out_nodes[1]] == 0:
             return False
         else:
