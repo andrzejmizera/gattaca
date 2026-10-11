@@ -169,5 +169,6 @@ Agent M
 end Agent
 
 InitStates
-		M.v_AKT=true or M.v_AKT=false;
+		M.v_EGFR_stimulus=false and M.v_FGFR3_stimulus=false and (M.v_DNA_damage=false or M.v_DNA_damage=true) and (M.v_Growth_Arrest=false or M.v_Growth_Arrest=true);
 end InitStates
+

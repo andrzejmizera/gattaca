@@ -361,5 +361,5 @@ Agent M
 end Agent
 
 InitStates
-		M.v_DLL_i={{ true }} and M.v_IGF1={{ true }} and M.v_PG={{ true }} and M.v_WNT1={{ true }};
+		M.v_DLL_i=true and M.v_EGF=true and M.v_ES=true and M.v_IGF1=true and M.v_INS=true and M.v_NRG1=true and M.v_PG=true and M.v_WNT1=true;
 end InitStates

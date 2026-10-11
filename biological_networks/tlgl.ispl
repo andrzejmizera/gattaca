@@ -193,5 +193,5 @@ Agent M
 end Agent
 
 InitStates
-    M.v_CD45=false and M.v_IFN=true and M.v_IL15=true and M.v_PDGF=false and M.v_Stimuli=true and M.v_Stimuli2=true and M.v_TAX=true;
+                (M.v_IFN=false or M.v_IFN=true);
 end InitStates
