@@ -40,14 +40,18 @@ This project extends our previous work [pbn-STAC](https://arxiv.org/abs/2402.084
 - Use `train_gattaca.py` to train a DDQN agent. It's a command line utility so you can check out what you can do with it using `--help`.
     E.g.:
     ```sh
-     python train_gattaca.py --size 67 --assa-file  bortezomib_fixed.ispl --exp-name example --name bortezomib
+     python train_gattaca.py --size 35 --assa-file biological_networks/bladder_3-9.ispl --exp-name bladder_train --name bladder2
+    ```
+    
+    ```sh
+     python train_gattaca.py --size 67 --assa-file biological_models/bortezomib.ispl --exp-name bortezomib_train --name bortezomib
     ```
 
 - Use `model_tester.py` to get strategies and statistics about the model.
-E.g.:
-```sh
-python model_tester.py -n 67 --assa-file  bortezomib_fixed.ispl --model-path models/pbn67/bdq_final.pt --attractors 5 --runs 10 --name bortezomib
-```
+    E.g.:
+    ```sh
+     python model_tester.py -n 67 --assa-file biological_models/bortezomib.ispl  --model-path models/pbn67/bdq_final.pt --attractors 5 --runs 10 --name bortezomib
+    ```
 
 | Argument       | Description                                                          |
 | -------------- | -------------------------------------------------------------------- |
