@@ -193,5 +193,6 @@ Agent M
 end Agent
 
 InitStates
-                (M.v_IFN=false or M.v_IFN=true);
+        -- in the paper we have considered all of the possible settings
+	M.v_CD45= false and M.v_IFN= false and M.v_IL15= true and M.v_PDGF= false and M.v_Stimuli= false and M.v_Stimuli2= false and M.v_TAX= true;
 end InitStates
