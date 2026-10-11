@@ -68,7 +68,7 @@ class PBNTargetMultiEnv(gym.Env):
         self.observation_space = MultiBinary(self.graph.N)
         # intervention nodes + no action
         print("\nhello\n")
-        self.action_space = MultiDiscrete(self.graph.N + 1)
+        self.action_space = MultiDiscrete([self.graph.N + 1])
         self.name = name
         self.render_mode = render_mode
         self.render_no_cache = render_no_cache
@@ -124,7 +124,7 @@ class PBNTargetMultiEnv(gym.Env):
             if (action != 0) and (action - 1 not in self.forbidden_actions):  # Action 0 is taking no action.
                 self.graph.flipNode(action - 1)
 
-        self.graph.step()
+        self.graph.step() # AM: Needed when force = True to make a single transition (for example when called by statistical_attractors())
         observation = self.graph.getState()
         
         step_count = 0
