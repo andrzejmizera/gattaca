@@ -99,8 +99,10 @@ class PBNEnv(PBNTargetMultiEnv):
 
         # mcf7
         if model_name == 'mcf7':
-            input_nodes = ['v_ABL2', 'v_DLL_i', 'v_EGF', 'v_ES', 'v_IGF1', 'v_IL6R', 'v_INS', 'v_NRG1', 'v_PG', 'v_WNT1']
-            self.initial_values = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            # input_nodes = ['v_ABL2', 'v_DLL_i', 'v_EGF', 'v_ES', 'v_IGF1', 'v_IL6R', 'v_INS', 'v_NRG1', 'v_PG', 'v_WNT1']
+            # self.initial_values = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            input_nodes = ['v_DLL_i', 'v_EGF', 'v_ES', 'v_IGF1', 'v_INS', 'v_NRG1', 'v_PG', 'v_WNT1']
+            self.initial_values = [1, 1, 1, 1, 1, 1, 1, 1]
 
         # input_nodes = ["XX", "SHP1", "TNFAR", "Bort", "TNFA"]
 
@@ -114,13 +116,17 @@ class PBNEnv(PBNTargetMultiEnv):
             assert (len(input_nodes) == len(self.initial_values))
 
 
-        #tdiff_jun
-        if model_name == 'tdiff_jun':
+        #tdiff_reduced (Jun)
+        if model_name == 'tdiff_reduced':
             input_nodes = ["APC", "IFNB_e", "IFNG_e", "IL2_e", "IL4_e", "IL6_e", "IL10_e", "IL12_e", "IL15_e", "IL21_e",
                            "IL23_e", "IL27_e", "TGFB_e", "IFNGR1", "IFNGR2", "GP130", "IL6RA", "CGC", "IL12RB2", "IL10RB",
                            "IL10RA", "IL15RA", "IL2RB", "IL27RA"]
-
             self.initial_values = [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+        #tlgl
+        if model_name == 'tlgl':
+            input_nodes = []
+            self.initial_values = []
 
         #random200
         if model_name == 'random200':
@@ -153,8 +159,8 @@ class PBNEnv(PBNTargetMultiEnv):
             out_node_names = ["v_GATA3"]
             self.out_node_values = [1]
 
-        #tdiff_jun
-        if model_name == 'tdiff_jun':
+        #tdiff_reduced (Jun)
+        if model_name == 'tdiff_reduced':
             out_node_names = ["TBET", "GATA3", "RORGT", "FOXP3"]
             self.out_node_values = [1, 0, 1, 1]
 
@@ -187,7 +193,7 @@ class PBNEnv(PBNTargetMultiEnv):
         if model_name == 'bladder2':
             out_node_names = ["v_Apoptosis_b1", "v_Apoptosis_b2"]
             self.out_node_values = [1, 1]
-            # !!! Change in_target() !!!
+            # !!! Changed in in_target() in accordance with what is written in the extended version of the paper on arXiv !!!
 
         # # pbn7
         if model_name == 'pbn7':
