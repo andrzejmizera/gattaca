@@ -192,7 +192,7 @@ for i in range(runs):
             # policy, value = model.predict(state, target_state)
             # policy = policy.numpy()
             # action = [np.random.choice(range(N+1), p=policy)]
-            action = model.predict(state, state)
+            action = model.predict(state, state, test=True)
             al = action.tolist()
 
             for gen in al:
