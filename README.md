@@ -38,7 +38,8 @@ This project extends our previous work [pbn-STAC](https://arxiv.org/abs/2402.084
 
 # Running
 - Use `train_gattaca.py` to train a DDQN agent. It's a command line utility so you can check out what you can do with it using `--help`.
-    E.g.:
+
+  For example:
     ```sh
      python train_gattaca.py --size 35 --assa-file biological_networks/bladder_3-9.ispl --exp-name bladder_train --name bladder2
     ```
@@ -48,15 +49,17 @@ This project extends our previous work [pbn-STAC](https://arxiv.org/abs/2402.084
     ```
 
 - Use `model_tester.py` to get strategies and statistics about the model.
-    E.g.:
+
+  For example:
     ```sh
      python model_tester.py -n 67 --assa-file biological_models/bortezomib.ispl  --model-path models/pbn67/bdq_final.pt --attractors 5 --runs 10 --name bortezomib
     ```
 
-| Argument       | Description                                                          |
-| -------------- | -------------------------------------------------------------------- |
-| `-n`           | (Required) Number of nodes in the model.                       |
-| `--assa-file`  | (Required) Path to the `.ispl` file.     |
-| `--model-path` | (Required) Path to the trained PyTorch model `.pt` file.             |
-| `--attractors` | (Optional) Number of source attractors to analyse. It may be smaller than the total number of attractors.             |
-| `--runs`       | (Optional) Number of test runs for averaging or robustness checking. |
+  | Argument       | Description                                                          |
+  | -------------- | -------------------------------------------------------------------- |
+  | `-n`           | (Required) Number of nodes in the model.                             |
+  | `--assa-file`  | (Required) Path to the `.ispl` file.                                 |
+  | `--model-path` | (Required) Path to the trained PyTorch model `.pt` file.             |
+  | `--attractors` | (Optional) Number of source attractors to analyse. It may be smaller than the total number of attractors.             |
+  | `--runs`       | (Optional) Number of test runs for averaging or robustness checking. |
+  | `--name`       | (Required) Name of the model.                                        |
