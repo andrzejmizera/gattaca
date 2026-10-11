@@ -43,6 +43,8 @@ class PBNEnv(PBNTargetMultiEnv):
         self.divided_attractors = []
         self.forbidden_actions = []
 
+        self.model_name = model_name
+
         input_nodes = []
         # self.initial_values = []
 
@@ -312,18 +314,18 @@ class PBNEnv(PBNTargetMultiEnv):
         # print(self.out_nodes)
         # print(self.out_node_values)
 
+        if self.model_name != 'bladder2':
         # For all except bladder2
-        # for i in range(len(self.out_node_values)):
-        #    if observation[self.out_nodes[i]] != self.out_node_values[i]:
-        #        return False
-        # return True
-
-        # For bladder2:
-        print(f"Out nodes: {self.out_nodes}")
-        if observation[self.out_nodes[0]] + observation[self.out_nodes[1]] == 0:
-            return False
-        else:
+            for i in range(len(self.out_node_values)):
+                if observation[self.out_nodes[i]] != self.out_node_values[i]:
+                    return False
             return True
+        else:
+            # For bladder2:
+            if observation[self.out_nodes[0]] + observation[self.out_nodes[1]] == 0:
+                return False
+            else:
+                return True
 
 
     def is_singleton(self, state):

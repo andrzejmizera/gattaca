@@ -48,6 +48,8 @@ parser.add_argument('--assa-file', type=str, default=None)
 parser.add_argument('--matlab-file', type=str, default=None)
 parser.add_argument('--model-path', type=str, default=None)
 parser.add_argument('--model-step', type=str, default=None)
+parser.add_argument('--name', type=str, required=True)
+
 args = parser.parse_args()
 
 
@@ -131,7 +133,8 @@ if args.assa_file is not None:
                    N=args.size,
                    genes=list(logic_funcs.keys()),
                    logic_functions=list(logic_funcs.values()),
-                   min_attractors=3)
+                   min_attractors=3,
+                   model_name=args.name)
 
     env.set_input_nodes(input_nodes)
 
