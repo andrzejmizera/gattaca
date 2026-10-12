@@ -156,7 +156,7 @@ class PBNEnv(PBNTargetMultiEnv):
 
         #cd4+
         if model_name == 'cd4':
-            out_node_names = ["v_GATA3"]
+            out_node_names = ["GATA3"]
             self.out_node_values = [1]
 
         #tdiff_reduced (Jun)
