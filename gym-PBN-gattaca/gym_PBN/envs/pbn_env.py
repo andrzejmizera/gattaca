@@ -106,13 +106,22 @@ class PBNEnv(PBNTargetMultiEnv):
 
         # input_nodes = ["XX", "SHP1", "TNFAR", "Bort", "TNFA"]
 
+        # #CD4+
+        # if model_name == 'cd4':
+        #     input_nodes = ["IL27RA", "IL27_e", "GP130", "Galpha_QL", "IL2RB", "CGC", "Galpha_iL", "MHC_II", "APC",
+        #                       "IL18_e", "IL9_e", "IFNB_e", "ECM", "IL21_e", "alpha_13L", "IL10RA", "IL10RB", "IL10_e",
+        #                       "IL15_e", "B7", "IFNGR1", "IFNGR2", "IFNG_e", "CAV1_ACTIVATOR", "GalphaS_L", "IL4_e",
+        #                       "IL6_e", "IL6RA", "TGFB_e", "IL22_e", "IL2_e", "IL23_e", "IL15RA", "IL12_e"]
+        #     self.initial_values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        #     assert (len(input_nodes) == len(self.initial_values))
+
         #CD4+
         if model_name == 'cd4':
             input_nodes = ["IL27RA", "IL27_e", "GP130", "Galpha_QL", "IL2RB", "CGC", "Galpha_iL", "MHC_II", "APC",
-                              "IL18_e", "IL9_e", "IFNB_e", "ECM", "IL21_e", "alpha_13L", "IL10RA", "IL10RB", "IL10_e",
-                              "IL15_e", "B7", "IFNGR1", "IFNGR2", "IFNG_e", "CAV1_ACTIVATOR", "GalphaS_L", "IL4_e",
-                              "IL6_e", "IL6RA", "TGFB_e", "IL22_e", "IL2_e", "IL23_e", "IL15RA", "IL12_e"]
-            self.initial_values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                                "IL18_e", "IL9_e", "IFNB_e", "ECM", "IL21_e", "alpha_13L", "IL10RA", "IL10RB", "IL10_e",
+                                "IL15_e", "B7", "IFNGR1", "IFNGR2", "IFNG_e", "GalphaS_L", "IL4_e",
+                                "IL6_e", "IL6RA", "TGFB_e", "IL22_e", "IL2_e", "IL23_e", "IL15RA", "IL12_e"]
+            self.initial_values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             assert (len(input_nodes) == len(self.initial_values))
 
 
