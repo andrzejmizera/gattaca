@@ -79,6 +79,7 @@ class PBNTargetMultiEnv(gym.Env):
         self.visited_states = defaultdict(int)
 
         self.all_attractors = []
+        self.attractor_set = set()
         self.non_attractors = set()
         self.attracting_states = set()
         self.counter = 0
@@ -162,6 +163,7 @@ class PBNTargetMultiEnv(gym.Env):
                             print('added an attractor from PASIP-I')
                             self.all_attractors.append([observation])
                             self.attracting_states.add(observation)
+                            self.attractor_set.add(observation)
                             self.probabilities.append(0)
                     self.rework_probas()
                     with open(self.path, "wb+") as f:
@@ -210,6 +212,7 @@ class PBNTargetMultiEnv(gym.Env):
                         else:
                             self.all_attractors.append([a])
                             self.attracting_states.add(a)
+                            self.attractor_set.add(a)
                             self.probabilities.append(0)
                             history.clear()
                 self.rework_probas()
