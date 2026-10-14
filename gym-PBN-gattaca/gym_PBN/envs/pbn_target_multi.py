@@ -239,21 +239,24 @@ class PBNTargetMultiEnv(gym.Env):
         return state
 
     def in_target(self, observation):
-        # tlgl_good
-        # nodes = [65, 4, 56, 3]
+        # # tlgl_good
+        # # nodes = [65, 4, 56, 3]
+        # # out_values = [1, 0, 1, 1]
+
+        # # nodes = [3, 4]
         # out_values = [1, 0, 1, 1]
 
-        # nodes = [3, 4]
-        out_values = [1, 0, 1, 1]
+        # # if observation[nodes[0]] + observation[nodes[1]] == 0:
+        # #     return False
 
-        # if observation[nodes[0]] + observation[nodes[1]] == 0:
-        #     return False
+        # for i in range(1):
+        #     if observation[self.out_nodes[i]] != out_values[i]:
+        #         return False
 
-        for i in range(1):
-            if observation[self.out_nodes[i]] != out_values[i]:
-                return False
+        # return True
 
-        return True
+        raise TypeError("The method in_target() of the PBNTargetMultiEnv class is abstract!")
+
 
 
     def _get_reward(self, observation: STATE, actions) -> Tuple[REWARD, TERMINATED, TRUNCATED]:
