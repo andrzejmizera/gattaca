@@ -1,4 +1,4 @@
-**This research was funded in whole or in part by the National Science Centre, Poland under the OPUS call in the Weave programme, grant number 2023/51/I/ST6/02864.**
+**This research was funded in part by the National Science Centre, Poland under the OPUS call in the Weave programme, grant number 2023/51/I/ST6/02864.**
 
 ---
 
