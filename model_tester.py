@@ -157,6 +157,7 @@ gene_stats = []
 genes_used = defaultdict(int)
 total = 0
 count = 0
+print(f"Horizon set to: {env.horizon}")
 print("testing on ", len(all_attractors), " attractros")
 for i in range(runs):
     print("testing round ", i)
@@ -205,7 +206,7 @@ for i in range(runs):
             state = env.render()
             # action_named = [gen_ids[a-1] for a in action]
 
-            if count > 100:
+            if count > env.horizon:
                 print(f"failed to converge for {attractor_id}")
                 # print(f"final state was 		     {tuple(state)}")
                 print(id)
