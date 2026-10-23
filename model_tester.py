@@ -157,6 +157,7 @@ gene_stats = []
 genes_used = defaultdict(int)
 total = 0
 count = 0
+print(f"Horizon set to: {env.horizon}")
 print("testing on ", len(all_attractors), " attractros")
 for i in range(runs):
     print("testing round ", i)
@@ -174,13 +175,13 @@ for i in range(runs):
         # target = all_attractors[target_id]
         # target_state = target[0]
         initial_state = attractor
-        total += 1
+        # total += 1
         actions = []
         state = initial_state
         state = [0 if i == '*' else i for i in list(state)]
         _ = env.reset()
         env.graph.setState(state)
-        total += count
+        # total += count
         count = 0
 
         # env.setTarget(target)
@@ -205,7 +206,7 @@ for i in range(runs):
             state = env.render()
             # action_named = [gen_ids[a-1] for a in action]
 
-            if count > 100:
+            if count > env.horizon:
                 print(f"failed to converge for {attractor_id}")
                 # print(f"final state was 		     {tuple(state)}")
                 print(id)
@@ -213,11 +214,13 @@ for i in range(runs):
                 # raise ValueError
                 break
         else:
+            total += count
             print(f"for initial state {attractor_id} got (total of {count} steps), on: \n"
                   f"{[[env.graph.nodes[a].name for a in action] for action in gu]}")
 
 
-print('got total steps ', total, 'in ', len(env.divided_attractors) * args.runs, 'runs')
-print('average ', total / (len(env.divided_attractors) * args.runs))
+print('got total steps ', total, 'in ', len(env.divided_attractors) * args.runs - failed, 'successful runs')
+print(f"Failed on {failed} runs")
+print('average ', total / (len(env.divided_attractors) * args.runs - failed))
 gene_stats = gene_stats[1:]
 print("gene used: ", {env.graph.nodes[i].name: genes_used[i] for i in genes_used if i not in env.forbidden_actions})
